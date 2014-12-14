@@ -10,5 +10,10 @@ module.exports = [
   {method: 'get',    path: '/writers',                      config: require('../definitions/writers/query')},
   {method: 'get',    path: '/writers/{writerId}',           config: require('../definitions/writers/show')},
   {method: 'delete', path: '/writers/{writerId}',           config: require('../definitions/writers/nuke')},
-  {method: 'get',    path: '/writers/count',                config: require('../definitions/writers/count')}
+  {method: 'get',    path: '/writers/count',                config: require('../definitions/writers/count')},
+  {method: 'post',   path: '/publishers',                   config: require('../definitions/publishers/create')},
+  {method: 'get',    path: '/publishers',                   config: require('../definitions/publishers/query')},
+  {method: 'get',    path: '/publishers/{publisherId}',     config: require('../definitions/publishers/show')},
+  {method: 'delete', path: '/publishers/{publisherId}',     config: require('../definitions/publishers/nuke')},
+  {method: 'get',    path: '/publishers/count',             config: require('../definitions/publishers/count')}
 ];

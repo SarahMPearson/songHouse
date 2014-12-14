@@ -2,22 +2,22 @@
   'use strict';
 
   angular.module('song')
-  .controller('WritersListCtrl', ['$scope', '$state', 'Writer', function($scope, $state, Writer){
-    $scope.writer = {};
+  .controller('PubListCtrl', ['$scope', '$state', 'Publisher', function($scope, $state, Publisher){
+    $scope.publisher = {};
     $scope.pages = 0;
     $scope._ = _;
 
-    Writer.query($state.params.page * 1 || 0).then(function(response){
-      $scope.writer = response.data.writers;
+    Publisher.query($state.params.page * 1 || 0).then(function(response){
+      $scope.publisher = response.data.publishers;
     });
 
-    Writer.count().then(function(response){
+    Publisher.count().then(function(response){
       $scope.total = response.data.count * 1;
       $scope.pages = Math.ceil($scope.total / 5);
     });
 
     $scope.nuke = function(note){
-      Writer.nuke(note).then(function(response){
+      Publisher.nuke(note).then(function(response){
         $state.reload();
       });
     };
@@ -26,9 +26,9 @@
       return page === $state.params.page * 1;
     };
 
-    $scope.create = function(writer){
-      Writer.create(writer).then(function(response){
-        $scope.writer = {};
+    $scope.create = function(publisher){
+      Publisher.create(publisher).then(function(response){
+        $scope.publisher = {};
         console.log(response.data);
       }, function(){
         console.log('error');

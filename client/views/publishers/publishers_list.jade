@@ -1,0 +1,30 @@
+h1 Publishers
+
+.row
+  .small-8.columns
+    h3 Publishers List
+    table#publishers
+      thead
+        tr
+          th Delete
+          th Name
+          th Address
+          th Phone
+      tbody
+        tr(ng-repeat='writer in writers')
+          td
+            a(ng-click='nuke(writer)')
+              img(ng-src='/assets/delete.png')
+          td: a(ui-sref='publisher.detail({publisherId:publisher.publisher_id})') {{publisher.name}}
+          td {{publisher.address}}
+          td {{publisher.phone}}         
+    .pagination-centered
+      ul.pagination
+        li(ng-class='{current:isCurrent(page)}', ng-repeat='page in _.range(0,pages)')
+          a(ui-sref='publishers.list({page:page})') {{page}}
+  .small-4.columns
+    h3 Add A Publisher
+    input(type='text', ng-model='publisher.name', placeholder='name')
+    input(type='text', ng-model='publisher.address', placeholder='123 Main St., Nashville, TN, 37212')
+    input(type='text', ng-model='publisher.phone', placeholder='1234567890')
+    button.small.radius.success(ng-click='create(publisher)') Add Publisher

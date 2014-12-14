@@ -14,5 +14,6 @@ nav.top-bar(data-topbar, role="navigation", ng-controller='NavCtrl')
     ul.right(ng-show='rootuser.username')
       li: a(ui-sref='home') Home
       li: a(ui-sref='writers.list') Writers
+      li: a(ui-sref='publishers.list') Publishers
       li.divider
-      li: a#avatarlink(ng-click='logout()'): img#avatarimg(ng-src='{{rootuser.avatar}}')
+      li: a#logolink(ng-click='logout()'): img#logoimg(ng-src='{{rootuser.avatar}}')
