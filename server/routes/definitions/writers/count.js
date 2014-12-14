@@ -4,7 +4,7 @@ var Writer = require('../../../models/writer');
 
 module.exports = {
   description: 'Count all Writer by User',
-  tags:['notes'],
+  tags:['writers'],
   handler: function(request, reply){
     Writer.count(request.auth.credentials, function(err, count){
       reply({count:count}).code(err ? 400 : 200);

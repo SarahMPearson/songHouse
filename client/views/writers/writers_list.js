@@ -26,7 +26,6 @@
     };
 
     $scope.create = function(writer){
-      $scope.count = 0;
       Writer.create(writer).then(function(response){
         $scope.writer = {};
       });
