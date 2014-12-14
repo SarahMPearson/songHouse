@@ -1,0 +1,35 @@
+h1 Writers
+
+.row
+  .small-8.columns
+    h3 Writers List
+    table#writers
+      thead
+        tr
+          th Delete
+          th Name
+          th Phone
+          th PRO
+      tbody
+        tr(ng-repeat='writer in writers')
+          td
+            a(ng-click='nuke(writer)')
+              img(ng-src='/assets/delete.png')
+          td: a(ui-sref='writer.detail({writerId:writer.writer_id})') {{writer.name}}
+          td {{writer.phone}}
+          td {{writer.pro}}         
+    .pagination-centered
+      ul.pagination
+        li(ng-class='{current:isCurrent(page)}', ng-repeat='page in _.range(0,pages)')
+          a(ui-sref='notes.list({page:page})') {{page}}
+  .small-4.columns
+    h3 Add A Writer
+    input(type='text', ng-model='writer.name', placeholder='name')
+    input(type='text', ng-model='writer.phone', placeholder='1234567890')
+    input(type='text', ng-model='writer.pro', placeholder='BMI')
+    button.small.radius.success(ng-click='create(writer)') Add Writer
+
+    
+          
+                                      
+            
