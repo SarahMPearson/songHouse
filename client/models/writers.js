@@ -18,6 +18,14 @@
       return $http.get('/writers/count');
     }
 
-    return {create:create, query:query, count:count};
+    function nuke(writer){
+      return $http.delete('/writers/' + writer.writer_id);
+    }
+
+    function show(writerId){
+      return $http.get('/writers/' + writerId);
+    }
+
+    return {create:create, query:query, count:count, nuke:nuke, show:show};
   }]);
 })();

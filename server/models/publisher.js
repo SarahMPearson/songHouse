@@ -22,8 +22,6 @@ Publisher.query = function(user, query, cb){
 
 Publisher.count = function(user, cb){
   pg.query('select count(*) from publishers where user_id = $1', [user.id], function(err, results){
-    console.log('SERVER WRITER.JS ERR', err);
-    console.log('Server Writer.js Results', results);
     cb(err, results && results.rows ? results.rows[0].count : null);
   });
 };

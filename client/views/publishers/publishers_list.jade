@@ -11,9 +11,9 @@ h1 Publishers
           th Address
           th Phone
       tbody
-        tr(ng-repeat='writer in writers')
+        tr(ng-repeat='publisher in publishers')
           td
-            a(ng-click='nuke(writer)')
+            a(ng-click='nuke(publisher)')
               img(ng-src='/assets/delete.png')
           td: a(ui-sref='publisher.detail({publisherId:publisher.publisher_id})') {{publisher.name}}
           td {{publisher.address}}
@@ -24,7 +24,7 @@ h1 Publishers
           a(ui-sref='publishers.list({page:page})') {{page}}
   .small-4.columns
     h3 Add A Publisher
-    input(type='text', ng-model='publisher.name', placeholder='name')
-    input(type='text', ng-model='publisher.address', placeholder='123 Main St., Nashville, TN, 37212')
+    input(type='text', ng-model='pub.name', placeholder='name')
+    input(type='text', ng-model='pub.address', placeholder='123 Main St., Nashville, TN, 37212')
     input(type='text', ng-model='publisher.phone', placeholder='1234567890')
-    button.small.radius.success(ng-click='create(publisher)') Add Publisher
+    button.small.radius.success(ng-click='create(pub)') Add Publisher

@@ -15,7 +15,7 @@ h1 Writers
           td
             a(ng-click='nuke(writer)')
               img(ng-src='/assets/delete.png')
-          td: a(ui-sref='writer.detail({writerId:writer.writer_id})') {{writer.name}}
+          td: a(ui-sref='writers.detail({writerId:writer.writer_id})') {{writer.name}}
           td {{writer.phone}}
           td {{writer.pro}}         
     .pagination-centered

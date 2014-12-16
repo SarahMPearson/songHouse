@@ -12,7 +12,9 @@ module.exports = {
     }
   },
   handler: function(request, reply){
-    Writer.show(request.auth.credentials, request.params.noteId, function(err, writer){
+    Writer.show(request.auth.credentials, request.params.writerId, function(err, writer){
+      // console.log('routes err', err);
+      // console.log('routes writer', writer);
       reply(writer).code(err ? 400 : 200);
     });
   }

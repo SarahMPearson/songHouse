@@ -19,8 +19,8 @@
       $scope.pages = Math.ceil($scope.total / 5);
     });
 
-    $scope.nuke = function(note){
-      Writer.nuke(note).then(function(response){
+    $scope.nuke = function(writer){
+      Writer.nuke(writer).then(function(response){
         $state.reload();
       });
     };
