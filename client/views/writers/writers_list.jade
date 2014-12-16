@@ -24,12 +24,7 @@ h1 Writers
           a(ui-sref='writers.list({page:page})') {{page}}
   .small-4.columns
     h3 Add A Writer
-    input(type='text', ng-model='writer.name', placeholder='name')
-    input(type='text', ng-model='writer.phone', placeholder='1234567890')
-    input(type='text', ng-model='writer.pro', placeholder='BMI')
-    button.small.radius.success(ng-click='create(writer)') Add Writer
-
-    
-          
-                                      
-            
+    input(type='text', ng-model='person.name', placeholder='name')
+    input(type='text', ng-model='person.phone', placeholder='1234567890')
+    input(type='text', ng-model='person.pro', placeholder='BMI')
+    button.small.radius.success(ng-click='create(person)') Add Writer

@@ -5,7 +5,7 @@ var Joi     = require('joi'),
 
 module.exports = {
   description: 'Create a Writer',
-  tags:['notes'],
+  tags:['writers'],
   validate: {
     payload: {
       name: Joi.string().required(),
@@ -15,6 +15,7 @@ module.exports = {
   },
   handler: function(request, reply){
     Writer.create(request.auth.credentials, request.payload, function(err, writerId){
+      console.log('SERVER DEF WRITERS CREATE.JS writerId', writerId);
       reply({writerId:writerId}).code(err ? 400 : 200);
     });
   }

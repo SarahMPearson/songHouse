@@ -9,13 +9,13 @@ function Publisher(){
 
 Publisher.create = function(user, obj, cb){
   pg.query('select add_publisher($1, $2, $3, $4)', [user.id, obj.name, obj.address, obj.phone], function(err, results){
-    cb(err, results && results.rows ? results.rows[0].add_writer : null);
+    cb(err, results && results.rows ? results.rows[0].add_publisher : null);
   });
 };
 
 Publisher.query = function(user, query, cb){
-  pg.query('select * from query_publishers($1, $2)', [user.id, query.limit || 10, query.offset || 0], function(err, results){
-    console.log('WRITER JS RESUTLS in query>>>>>>>>>', results);
+  pg.query('select * from query_publishers($1, $2, $3)', [user.id, query.limit || 10, query.offset || 0], function(err, results){
+    console.log('publisher JS RESUTLS in query>>>>>>>>>', results);
     cb(err, results && results.rows ? results.rows : null);
   });
 };

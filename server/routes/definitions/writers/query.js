@@ -14,6 +14,7 @@ module.exports = {
   },
   handler: function(request, reply){
     Writer.query(request.auth.credentials, request.query, function(err, writers){
+      //console.log('query.js error', err);
       reply({writers:writers}).code(err ? 400 : 200);
     });
   }

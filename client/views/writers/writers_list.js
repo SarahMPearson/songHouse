@@ -3,13 +3,16 @@
 
   angular.module('song')
   .controller('WritersListCtrl', ['$scope', '$state', 'Writer', function($scope, $state, Writer){
-    $scope.writer = {};
     $scope.pages = 0;
     $scope._ = _;
 
-    Writer.query($state.params.page * 1 || 0).then(function(response){
-      $scope.writer = response.data.writers;
-    });
+    function query(){
+      Writer.query($state.params.page * 1 || 0).then(function(response){
+        $scope.writers = response.data.writers;
+      });
+    }
+
+    query();
 
     Writer.count().then(function(response){
       $scope.total = response.data.count * 1;
@@ -28,10 +31,8 @@
 
     $scope.create = function(writer){
       Writer.create(writer).then(function(response){
-        $scope.writer = {};
-        console.log(response.data);
-      }, function(){
-        console.log('error');
+        $scope.person = {};
+        query();
       });
     };
   }]);
