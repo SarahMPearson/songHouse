@@ -18,6 +18,14 @@
       return $http.get('/publishers/count');
     }
 
-    return {create:create, query:query, count:count};
+    function nuke(publisher){
+      return $http.delete('/publishers/' + publisher.publisher_id);
+    }
+
+    function show(publisherId){
+      return $http.get('/publishers/' + publisherId);
+    }
+
+    return {create:create, query:query, count:count, nuke:nuke, show:show};
   }]);
 })();

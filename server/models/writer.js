@@ -16,7 +16,7 @@ Writer.create = function(user, obj, cb){
 
 Writer.query = function(user, query, cb){
   pg.query('select * from query_writers($1, $2, $3)', [user.id, query.limit || 10, query.offset || 0], function(err, results){
-    //console.log('WRITER JS RESUTLS in query>>>>>>>>>', results);
+    console.log('server WRITER JS RESUTLS in query>>>>>>>>>', results);
     cb(err, results && results.rows ? results.rows : null);
   });
 };

@@ -1,5 +1,5 @@
-create or replace function query_publisher (uid integer, lmt integer, ofst integer)
-returns table (publisher_id integer, name varchar, address varchar, phone varchar, updated_at timestamp) AS $$
+create or replace function query_publishers (uid integer, lmt integer, ofst integer)
+returns table (publisher_id integer, name varchar, address varchar, phone char, updated_at timestamp) AS $$
 declare
 begin
 

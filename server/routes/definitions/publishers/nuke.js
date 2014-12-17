@@ -12,7 +12,7 @@ module.exports = {
     }
   },
   handler: function(request, reply){
-    Publisher.nuke(request.auth.credentials, request.params.noteId, function(err, publisherId){
+    Publisher.nuke(request.auth.credentials, request.params.publisherId, function(err, publisherId){
       reply({publisherId:publisherId}).code(err ? 400 : 200);
     });
   }

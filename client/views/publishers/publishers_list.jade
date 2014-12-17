@@ -15,7 +15,7 @@ h1 Publishers
           td
             a(ng-click='nuke(publisher)')
               img(ng-src='/assets/delete.png')
-          td: a(ui-sref='publisher.detail({publisherId:publisher.publisher_id})') {{publisher.name}}
+          td: a(ui-sref='publishers.detail({publisherId:publisher.publisher_id})') {{publisher.name}}
           td {{publisher.address}}
           td {{publisher.phone}}         
     .pagination-centered
@@ -24,7 +24,7 @@ h1 Publishers
           a(ui-sref='publishers.list({page:page})') {{page}}
   .small-4.columns
     h3 Add A Publisher
-    input(type='text', ng-model='pub.name', placeholder='name')
+    input(type='text', ng-model='pub.name', placeholder='EMI')
     input(type='text', ng-model='pub.address', placeholder='123 Main St., Nashville, TN, 37212')
-    input(type='text', ng-model='publisher.phone', placeholder='1234567890')
+    input(type='text', ng-model='pub.phone', placeholder='123-456-7890')
     button.small.radius.success(ng-click='create(pub)') Add Publisher

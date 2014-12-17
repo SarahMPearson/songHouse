@@ -12,7 +12,7 @@ module.exports = {
     }
   },
   handler: function(request, reply){
-    Writer.nuke(request.auth.credentials, request.params.noteId, function(err, writerId){
+    Writer.nuke(request.auth.credentials, request.params.writerId, function(err, writerId){
       reply({writerId:writerId}).code(err ? 400 : 200);
     });
   }

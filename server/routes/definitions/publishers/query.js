@@ -14,6 +14,9 @@ module.exports = {
   },
   handler: function(request, reply){
     Publisher.query(request.auth.credentials, request.query, function(err, publishers){
+      //console.log('query.js request.query', request.query);
+      //console.log('query.js err', err);
+      //console.log('query.js publishers', publishers);
       reply({publishers:publishers}).code(err ? 400 : 200);
     });
   }
