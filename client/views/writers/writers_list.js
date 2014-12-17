@@ -2,9 +2,10 @@
   'use strict';
 
   angular.module('song')
-  .controller('WritersListCtrl', ['$scope', '$state', 'Writer', function($scope, $state, Writer){
+  .controller('WritersListCtrl', ['$scope', '$state', 'Writer', 'Publisher', function($scope, $state, Writer, Publisher){
     $scope.pages = 0;
     $scope._ = _;
+
 
     function query(){
       Writer.query($state.params.page * 1 || 0).then(function(response){
@@ -13,6 +14,14 @@
     }
 
     query();
+
+    function listPubs(){
+      Publisher.all().then(function(response){
+        $scope.publishers = response.data.publishers;
+      });
+    }
+
+    listPubs();
 
     Writer.count().then(function(response){
       $scope.total = response.data.count * 1;

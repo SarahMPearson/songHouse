@@ -8,8 +8,9 @@ function Writer(){
 }
 
 Writer.create = function(user, obj, cb){
-  pg.query('select add_writer($1, $2, $3, $4)', [user.id, obj.name, obj.phone, obj.pro], function(err, results){
+  pg.query('select add_writer($1, $2, $3, $4, $5)', [user.id, obj.name, obj.phone, obj.pro, obj.pub], function(err, results){
     //console.log('SERVER WRITER.JS writer.create results', results);
+    console.log('server writers.js err', err);
     cb(err, results && results.rows ? results.rows[0].add_writer : null);
   });
 };

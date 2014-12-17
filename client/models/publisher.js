@@ -10,6 +10,10 @@
       return $http.post('/publishers', publisher);
     }
 
+    function all(){
+      return $http.get('/publishers?limit=1000');
+    }
+
     function query(page){
       return $http.get('/publishers?limit=5&offset=' + 5 * page);
     }
@@ -26,6 +30,6 @@
       return $http.get('/publishers/' + publisherId);
     }
 
-    return {create:create, query:query, count:count, nuke:nuke, show:show};
+    return {create:create, all:all, query:query, count:count, nuke:nuke, show:show};
   }]);
 })();

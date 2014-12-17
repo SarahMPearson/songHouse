@@ -27,4 +27,6 @@ h1 Writers
     input(type='text', ng-model='person.name', placeholder='name')
     input(type='text', ng-model='person.phone', placeholder='1234567890')
     input(type='text', ng-model='person.pro', placeholder='BMI')
+    select(name='pubId', ng-model='person.pub', ng-options='p.publisher_id as p.name for p in publishers | orderBy:"name"', required)
+        option(value='') Select Publisher
     button.small.radius.success(ng-click='create(person)') Add Writer
