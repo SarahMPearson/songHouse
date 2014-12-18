@@ -8,6 +8,7 @@ h1 Writers
         tr
           th Delete
           th Name
+          th Publishing
           th Phone
           th PRO
       tbody
@@ -16,6 +17,7 @@ h1 Writers
             a(ng-click='nuke(writer)')
               img(ng-src='/assets/delete.png')
           td: a(ui-sref='writers.detail({writerId:writer.writer_id})') {{writer.name}}
+          td {{writer.pubName}}
           td {{writer.phone}}
           td {{writer.pro}}         
     .pagination-centered

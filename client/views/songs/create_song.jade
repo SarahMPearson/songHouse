@@ -1,0 +1,26 @@
+h1 SONGS
+
+form
+  .row
+    .small-12.columns
+      h3 Create A Song
+  .row
+    .small-9.columns
+      input(type='text', ng-model='song.title', placeholder='title of song')
+    .small-3.columns
+      input(type='date', ng-model='song.doc')
+  .row
+    .large-10.columns
+      .row.collapse.postfix-radius
+        .small-6.columns
+          select(name='writer', ng-model='song.writer', ng-options='w.writer_id as w.name for w in writers | orderBy:"name"', required)
+            option(value='') Select Writer
+        .small-3.columns  
+          input(type='text', ng-model='writer.precentage', placeholder='percentage')       
+        .small-1.columns
+            span.postfix %
+    .small-2.columns
+      button.small.radius.success(ng-click='addWriter()') Add Writer
+  .row
+    .small-12.columns
+      button.radius.success(ng-click='create(song)') Submit Song

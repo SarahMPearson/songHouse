@@ -26,6 +26,10 @@
       return $http.get('/writers/' + writerId);
     }
 
-    return {create:create, query:query, count:count, nuke:nuke, show:show};
+    function all(){
+      return $http.get('/writers?limit=1000');
+    }
+
+    return {create:create, query:query, count:count, nuke:nuke, show:show, all:all};
   }]);
 })();
