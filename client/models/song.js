@@ -7,6 +7,7 @@
   .factory('Song', ['$rootScope', '$http', function($rootScope, $http){
 
     function create(song){
+      console.log('client/models/song song', song);
       return $http.post('/songs', song);
     }
 
