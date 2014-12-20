@@ -8,11 +8,11 @@
     $scope.writers = [];
 
     $scope.create = function(song){
-      //var songId = response.data.song_id;
-      console.log('client/songs/create_song song', song);
+      //console.log('client/songs/create_song song', song);
       Song.create(song).then(function(response){
-        console.log('client/songs/create_song response', response);
+        //console.log('client/songs/create_song response', response);
         $scope.song = {};
+        $state.reload();
       });
     };
 
