@@ -1,7 +1,24 @@
-h1 Publishers
+.row
+  .small-12.columns
+    h2 Add A Publisher
+.row
+  .small-6.columns
+    label.labels Publisher Name
+    input(type='text', ng-model='pub.name', placeholder='EMI')
+  .small-6.columns
+    label.labels Publisher Phone #
+    input(type='text', ng-model='pub.phone', placeholder='123-456-7890')
+.row
+  .small-12.columns
+    label.labels Publisher's Address
+    input(type='text', ng-model='pub.address', placeholder='123 Main St., Nashville, TN, 37212')
+.row
+  .small-12.columns      
+    //input(type='text', ng-model='pub.phone', placeholder='123-456-7890')
+    button.button.expand.success(ng-click='create(pub)') Add Publisher
 
 .row
-  .small-8.columns
+  .small-12.columns
     h3 Publishers List
     table#publishers
       thead
@@ -22,7 +39,7 @@ h1 Publishers
       ul.pagination
         li(ng-class='{current:isCurrent(page)}', ng-repeat='page in _.range(0,pages)')
           a(ui-sref='publishers.list({page:page})') {{page}}
-  .small-4.columns
+  //.small-4.columns
     h3 Add A Publisher
     input(type='text', ng-model='pub.name', placeholder='EMI')
     input(type='text', ng-model='pub.address', placeholder='123 Main St., Nashville, TN, 37212')

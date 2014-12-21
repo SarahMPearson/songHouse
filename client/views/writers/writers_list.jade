@@ -1,7 +1,30 @@
-h1 Writers
-
 .row
-  .small-8.columns
+  .small-12.columns
+    h2 Add A Writer
+.row
+  .small-6.columns
+    label.labels Writer Name
+    input(type='text', ng-model='person.name', placeholder='name')
+  .small-6.columns
+    label.labels Select Writer's Publishing Company
+    select(name='pubId', ng-model='person.pub', ng-options='p.publisher_id as p.name for p in publishers | orderBy:"name"', required)
+     option(value='') Select Publisher
+.row
+  .small-6.columns
+    label.labels Writer's Phone #
+    input(type='text', ng-model='person.phone', placeholder='123-456-7890')
+  .small-6.columns
+    label.labels Writer's PRO
+    input(type='text', ng-model='person.pro', placeholder='BMI')
+  //.small-4.columns
+    label.labels Select Writer's Publishing Company
+    select(name='pubId', ng-model='person.pub', ng-options='p.publisher_id as p.name for p in publishers | orderBy:"name"', required)
+      option(value='') Select Publisher
+.row  
+  .small-12.columns
+    button.button.expand.success(ng-click='create(person)') Add Writer
+.row
+  .small-12.columns
     h3 Writers List
     table#writers
       thead
@@ -24,7 +47,7 @@ h1 Writers
       ul.pagination
         li(ng-class='{current:isCurrent(page)}', ng-repeat='page in _.range(0,pages)')
           a(ui-sref='writers.list({page:page})') {{page}}
-  .small-4.columns
+  //.small-4.columns
     h3 Add A Writer
     input(type='text', ng-model='person.name', placeholder='name')
     input(type='text', ng-model='person.phone', placeholder='1234567890')

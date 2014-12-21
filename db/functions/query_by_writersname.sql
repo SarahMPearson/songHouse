@@ -1,15 +1,12 @@
-select
+SELECT
   songs.title,
   songs.doc,
   percent,
   writers.name,
   publishers.name
 FROM
-  songs
+songs
 INNER JOIN percentages ON percentages.song_id = songs.id
 INNER JOIN writers ON writers.id = percentages.writer_id
---INNER JOIN percentages ON percentages.writer_id = writers.id
 INNER JOIN publishers on publishers.id = percentages.publisher_id
-WHERE percentages.song_id = 25 -- request.payload.??
-GROUP BY percentages.song_id
-ORDER BY songs.title desc;
+WHERE percentages.writer_id = 2; -- request.payload.writer_id?
