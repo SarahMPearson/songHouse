@@ -16,7 +16,8 @@
         .state('publishers.list',   {url:'?page',           templateUrl:'/views/publishers/publishers_list.html',   controller:'PubListCtrl'})
         .state('publishers.detail', {url:'/{publisherId}',  templateUrl:'/views/publishers/publishers_detail.html', controller:'PubDetailCtrl'})
         .state('songs',             {url:'/songs',          templateUrl:'/views/songs/songs.html',                  abstract:true})
-        .state('songs.create',      {url:'',                templateUrl:'/views/songs/create_song.html',            controller:'SongsCtrl'});
+        .state('songs.create',      {url:'',                templateUrl:'/views/songs/create_song.html',            controller:'SongsCtrl'})
+        .state('songs.query',       {url:'/query',          templateUrl:'/views/songs/songs_query.html',            controller:'SongsQueryCtrl'});
       }])
     .run(['$rootScope', '$http', function($rootScope, $http){
       $http.get('/status').then(function(response){

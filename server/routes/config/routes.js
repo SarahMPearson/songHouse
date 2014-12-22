@@ -16,5 +16,6 @@ module.exports = [
   {method: 'get',    path: '/publishers/{publisherId}',     config: require('../definitions/publishers/show')},
   {method: 'delete', path: '/publishers/{publisherId}',     config: require('../definitions/publishers/nuke')},
   {method: 'get',    path: '/publishers/count',             config: require('../definitions/publishers/count')},
-  {method: 'post',   path: '/songs',                        config: require('../definitions/songs/create')}
+  {method: 'post',   path: '/songs',                        config: require('../definitions/songs/create')},
+  {method: 'get',    path: '/songs/query',                  config: require('../definitions/songs/query')}
 ];
