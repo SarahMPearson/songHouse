@@ -14,6 +14,7 @@
     // query();
 
     Song.query().then(function(response){
+      debugger;
       console.log('Client/ songs_query.js response', response);
     });
 

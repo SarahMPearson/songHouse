@@ -11,9 +11,9 @@
       return $http.post('/songs', song);
     }
 
-    function query(songs){
-      console.log('client/models/song songs', songs);
-      return $http.get('/songs/query', songs);
+    function query(){
+      //console.log('client/models/songs songs', songs);
+      return $http.get('/songs/query');
     }
 
     return {create:create, query:query};

@@ -1,3 +1,18 @@
-h1 songs query
-
-h2 {{songs.title}}
+.row
+  .small-12.columns
+    h3 Query of The Songs
+    table#publishers
+      thead
+        tr
+          th Delete
+          th Title
+          th Date of Creation
+          th Writer(s) Name
+      tbody
+        tr(ng-repeat='song in songs')
+          td
+            a(ng-click='nuke(song)')
+              img(ng-src='/assets/delete.png')
+          td: a(ui-sref='publishers.detail({publisherId:publisher.publisher_id})') {{songs.title}}
+          td {{songs.doc}}
+          td {{writers.name}}     

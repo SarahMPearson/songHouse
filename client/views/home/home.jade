@@ -1,4 +1,5 @@
-h1 Welcome to SongHouse
+a(ui-sref='home') 
+  img#homeLogo(ng-src='/assets/logoSoHo.png')
 
 
 p#description pitch cask hoppy tulip glass trappist infusion original gravity? conditioning ester wort barley crystal malt additive. malt extract 
@@ -12,3 +13,9 @@ p#description pitch cask hoppy tulip glass trappist infusion original gravity? c
  | hops amber draft (draught. length bung oxidized yeast yeast." abbey wort chiller carboy biere de garde. chocolate malt trappist krausen 
  |crystal malt aau abbey gravity?" bottle conditioning hoppy oxidized terminal gravity gravity bright beer barrel. grainy finishing hops 
  | mash dextrin carbonation bung craft beer. hydrometer tulip glass bottle conditioning, " mead real ale mash."
+ 
+ ul#homeList(ng-show='rootuser.username')
+   li: a(ui-sref='home') Home
+   li: a(ui-sref='songs.create') Add Song
+   li: a(ui-sref='writers.list') Writers
+   li: a(ui-sref='publishers.list') Publishers

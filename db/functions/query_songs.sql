@@ -1,5 +1,5 @@
 create or replace function query_songs (uid integer)
-returns table ("writerName" varchar, pro varchar, title varchar, doc date, percent integer, "pubName" varchar) AS $$
+returns table (title varchar, doc date, "writerName" varchar, "pubName" varchar, pro varchar, percent integer) AS $$
 declare
 begin
 
@@ -21,6 +21,7 @@ select
   songs.doc,
   writers.name as "writerName",
   publishers.name as "pubName",
+  writers.pro,
   percentages.percent
 FROM
   songs
@@ -30,6 +31,28 @@ INNER JOIN writers ON writers.id = percentages.writer_id
 INNER JOIN publishers on publishers.id = percentages.publisher_id
 --WHERE percentages.song_id = 25 -- request.payload.??
 GROUP BY percentages.song_id
+ORDER BY songs.title desc;
+
+end;
+$$ language plpgsql;
+
+create or replace function query_songs (uid integer)
+returns table (title varchar, doc date, "writerName" varchar, "pubName" varchar, pro varchar, percent integer) AS $$
+declare
+begin
+
+SELECT DISTINCT ON (songs.id)
+  songs.title,
+  songs.doc,
+  percent,
+  writers.name,
+  publishers.name
+FROM
+  percentages
+INNER JOIN songs ON percentages.song_id = songs.id
+INNER JOIN writers ON writers.id = percentages.writer_id
+INNER JOIN publishers on publishers.id = percentages.publisher_id
+WHERE percentages.user_id = songs.user_id
 ORDER BY songs.title desc;
 
 end;
