@@ -1,5 +1,18 @@
-h1 {{publisher.name}}
-h6 Address
-h6.subheader {{publisher.address}}
-h6 Phone
-h6.subheader {{publisher.phone}}
+.row
+  .small-8.columns
+    h1 {{publisher.name}}
+    h6.subheader {{publisher.updated_at}}
+  .small-4.columns
+    ul.side-nav.right
+      li
+        a(href='#') Edit Publisher
+        |   
+      li
+        a(href='#') Delete Publisher
+.row
+  .small-6.columns
+    h4 Address
+    h6.subheader {{publisher.address}}
+  .small-6.columns
+    h4 Phone
+    h6.subheader {{publisher.phone}}

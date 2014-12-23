@@ -1,4 +1,4 @@
-.panel
+.panel.writers
   .row
     .small-12.columns
       h2 Add A Writer
@@ -24,7 +24,7 @@
   .row  
     .small-12.columns
       button.button.expand.success(ng-click='create(person)') Add Writer
-.row
+.row.writers
   .small-12.columns
     h3 Writers List
     table#writers
@@ -48,11 +48,3 @@
       ul.pagination
         li(ng-class='{current:isCurrent(page)}', ng-repeat='page in _.range(0,pages)')
           a(ui-sref='writers.list({page:page})') {{page}}
-  //.small-4.columns
-    h3 Add A Writer
-    input(type='text', ng-model='person.name', placeholder='name')
-    input(type='text', ng-model='person.phone', placeholder='1234567890')
-    input(type='text', ng-model='person.pro', placeholder='BMI')
-    select(name='pubId', ng-model='person.pub', ng-options='p.publisher_id as p.name for p in publishers | orderBy:"name"', required)
-        option(value='') Select Publisher
-    button.small.radius.success(ng-click='create(person)') Add Writer

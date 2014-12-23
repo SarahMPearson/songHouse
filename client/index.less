@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300);
 
 body {
   background-image: url('/assets/pen2.png');
@@ -7,6 +8,9 @@ body {
 
 #description {
   background-color: rgba(255 , 255, 255, .2);
+  width: 100%;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 120%;
 }
 
 /********************* LOGO **********************/
@@ -34,7 +38,7 @@ body {
 }
 
 .top-bar-section ul li > a {
-  padding-top: 5%;
+  padding-top: 6%;
   color: black;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 120%;
@@ -50,16 +54,20 @@ body {
 textarea{
   height: 200px;
 }
-#homeList ul li > a{
-  text-decoration: none;
-  display: inline-block;
+
+.homeList a{
   color: black;
+  font-size: 185%;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.homeList a:hover {
+    color: gray;
 }
 
-p li > a{
-  text-decoration: none;
-  display: inline-block;
+ul.side-nav.right a{
   color: black;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 185%;
 }
 
 #writers{
@@ -90,6 +98,12 @@ p li > a{
 
 }
 
+.writers {
+  -webkit-box-shadow: 10px 10px 29px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 29px -3px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 29px -3px rgba(0,0,0,0.75);
+}
+
 
 #publishers{
   width: 100%;
@@ -115,11 +129,10 @@ p li > a{
   }
 }
 
-//ul > li {
-  //text-decoration: none;
-  //display: inline-block;
-  //padding-right: 10%;
-//}
+tr td > a {
+  color: black;
+  text-decoration: none;
+}
 
 .labels {
   font-size: 120%;

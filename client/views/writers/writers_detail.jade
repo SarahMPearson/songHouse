@@ -1,5 +1,18 @@
-h1 {{writer.name}}
-h6 Phone
-h6.subheader {{writer.phone}}
-h6 PRO
-h6.subheader {{writer.pro}}
+.row
+  .small-8.columns
+    h1 {{writer.name}}
+  .small-4.columns
+    ul.side-nav.right
+      li
+        a(href='#') Edit Writer
+        |   
+      li
+        a(href='#') Delete Writer
+
+.row
+  .small-6.columns
+    h4 Phone
+    h6.subheader {{writer.phone}}
+  .small-6.columns
+    h4 PRO
+    h6.subheader {{writer.pro}}

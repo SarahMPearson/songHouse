@@ -2,20 +2,24 @@ a(ui-sref='home')
   img#homeLogo(ng-src='/assets/logoSoHo.png')
 
 
-p#description pitch cask hoppy tulip glass trappist infusion original gravity? conditioning ester wort barley crystal malt additive. malt extract 
- | top-fermenting yeast, malt extract alpha acid filter. brewpub, adjunct bock balthazar biere de garde finishing hops alpha acid. 
- | tulip glass cask brew sour/acidic rims yeast lauter adjunct kolsch brew kettle.
+p#description SongHouse is a home for publishing companies songs.  In one handy program you can enter songs, add writers and additional publishers. 
+  | You can query the songs by writer, DOC (date of creation) and title.  With future releases you will be able to upload mp3 files for each song to
+  | have quick and easy access of all your songs.  SongHouse is exactly what it says a house for all your publishing needs.  So come on in - kick back
+  | relax and start your companies database.
 
- | lambic scotch ale dextrin brewpub; gravity anaerobic lager; autolysis, double bock/dopplebock seidel bock. sour/acidic mash alpha acid 
- | gravity degrees plato.
-
- | noble hops hydrometer adjunct pilsner, dry hopping chocolate malt, yeast fermentation, sparge? lager cold filter additive noble 
- | hops amber draft (draught. length bung oxidized yeast yeast." abbey wort chiller carboy biere de garde. chocolate malt trappist krausen 
- |crystal malt aau abbey gravity?" bottle conditioning hoppy oxidized terminal gravity gravity bright beer barrel. grainy finishing hops 
- | mash dextrin carbonation bung craft beer. hydrometer tulip glass bottle conditioning, " mead real ale mash."
  
- ul#homeList(ng-show='rootuser.username')
-   li: a(ui-sref='home') Home
-   li: a(ui-sref='songs.create') Add Song
-   li: a(ui-sref='writers.list') Writers
-   li: a(ui-sref='publishers.list') Publishers
+.row.homeList
+  .small-3.columns
+    a(ui-sref='home') Home
+  .small-3.columns
+    a(ui-sref='songs.create') Add Song
+  .small-3.columns
+    a(ui-sref='writers.list') Add A Writer
+  .small-3.columns
+    a(ui-sref='publishers.list') Add A Publisher
+ 
+ //- //ul#homeList(ng-show='rootuser.username')
+ //-   li: a(ui-sref='home') Home
+ //-   li: a(ui-sref='songs.create') Add Song
+ //-   li: a(ui-sref='writers.list') Writers
+ //-   li: a(ui-sref='publishers.list') Publishers
