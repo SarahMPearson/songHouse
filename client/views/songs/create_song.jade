@@ -26,15 +26,12 @@ form
       button.small.radius.info(ng-click='addWriter()') Add Writer
   .row
     .small-12.columns
-      //ul.disc(ng-repeat='w in song.writers')
-        li {{w.name}}
-        li {{w.pubName}}
-        li {{w.percentage}}
       table
         tr(ng-repeat='w in song.writers')
           td(width='250') {{w.name}}
           td(width='300') {{w.pubName}}
           td(width='50') {{w.percentage}}
+          td {{w.pro}}
   .row
     .small-12.columns
       button.button.expand.success(ng-click='create(song)') Submit Song
