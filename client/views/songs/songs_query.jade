@@ -8,11 +8,15 @@
           th Title
           th Date of Creation
           th Writer(s) Name
+          th Percents
+          th PRO
       tbody
         tr(ng-repeat='song in songs')
           td
             a(ng-click='nuke(song)')
               img(ng-src='/assets/delete.png')
-          td: a(ui-sref='publishers.detail({publisherId:publisher.publisher_id})') {{songs.title}}
-          td {{songs.doc}}
-          td {{writers.name}}     
+          td: a(ui-sref='p.detail({publisherId:publisher.publisher_id})') {{song.title}}
+          td {{song.doc}}
+          td {{song.writersName}}
+          td {{song.percentages.percents}}
+          td {{song.PRO}}

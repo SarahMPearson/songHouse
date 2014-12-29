@@ -7,12 +7,12 @@
   .factory('Song', ['$rootScope', '$http', function($rootScope, $http){
 
     function create(song){
-      console.log('client/models/song song', song);
+      //console.log('client/models/song song', song);
       return $http.post('/songs', song);
     }
 
-    function query(){
-      //console.log('client/models/songs songs', songs);
+    function query(songs){
+      console.log('client/models/song songs', songs);
       return $http.get('/songs/query');
     }
 

@@ -28,7 +28,7 @@ Song.query = function(user, cb){
   pg.query('select * from query_songs($1)', [user.id], function(err, results){
     console.log('server/model/songs song.js err in query', err);
     console.log('server/model/songs song.JS RESUTLS in query>>>>>>>>>', results);
-    cb(err);
+    cb(err, results && results.rows ? results.rows : null);
   });
 };
 
