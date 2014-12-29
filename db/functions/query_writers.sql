@@ -7,7 +7,8 @@ create or replace function query_writers (uid integer, lmt integer, ofst integer
   select w.id, w.name, w.phone, w.pro, w.updated_at, w.publisher_id, p.name as "pubName"
   from writers w
   inner join publishers p on w.publisher_id = p.id
-  where w.user_id = p.user_id
+  where w.user_id = uid
+  --where w.user_id = p.user_id
   order by updated_at desc
   offset ofst
   limit lmt;

@@ -15,6 +15,7 @@ nav.top-bar(data-topbar, role="navigation", ng-controller='NavCtrl')
     ul.right(ng-show='rootuser.username')
       li: a(ui-sref='home') Home
       li: a(ui-sref='songs.create') Add Song
+      li: a(ui-sref='songs.query') List Songs
       li: a(ui-sref='writers.list') Writers
       li: a(ui-sref='publishers.list') Publishers
       li.divider
