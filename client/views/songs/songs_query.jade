@@ -15,14 +15,10 @@
           td
             a(ng-click='nuke(song)')
               img(ng-src='/assets/delete.png')
-          td: a(ui-sref='p.detail({publisherId:publisher.publisher_id})') {{song.title}}
+          td: a(ui-sref='songs.detail({songId:song.songID[0]})') {{song.title}}
           td {{song.doc[0] | date : 'mediumDate'}}
           td
             span.writersNames(ng-repeat='writer in song.writerName') 
               {{writer}}
-          td 
-            span.writersPercentages(ng-repeat='percent in song.percents')
-              {{percent}}
-          td 
-            span.writersPRO(ng-repeat='p in song.PRO')
-              {{p}}
+          td {{song.percent.join(', ')}}
+          td {{ song.pro.join(', ')}}

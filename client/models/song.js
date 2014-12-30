@@ -11,11 +11,14 @@
       return $http.post('/songs', song);
     }
 
-    function query(songs){
-      console.log('client/models/song songs', songs);
+    function query(){
       return $http.get('/songs/query');
     }
 
-    return {create:create, query:query};
+    function show(songId){
+      return $http.get('/songs/' + songId);
+    }
+
+    return {create:create, query:query, show:show};
   }]);
 })();
