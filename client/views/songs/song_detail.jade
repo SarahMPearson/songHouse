@@ -6,10 +6,17 @@
   .small-4.columns
     ul.side-nav.right
       li
-        a(href='#') Edit Song
-        |   
+        a(href='', ng-click='showModal(\'#songModal\')') Edit Song
+        #myModal.reveal-modal(data-reveal='')
+          h2 Awesome. I have it.
+          |   
+          p.lead Your couch.  It is mine.
+          |   
+          p I&apos;m a cool paragraph that lives inside of an even cooler modal. Wins!
+          |   
+          a.close-reveal-modal &times;  
       li
-        a(href='#') Delete Song
+        a(ng-click='nuke(song.songID)') Delete Song
             
 .row
   .small-6.columns
@@ -21,4 +28,6 @@
     h4 Percentages
     h6.subheader {{song.percent.join(', ')}}
     h4 PRO
-    h6.subheader {{song.percent.join(', ')}}
+    h6.subheader {{song.pro.join(', ')}}
+
+include song_modal

@@ -1,7 +1,7 @@
 'use strict';
 
 var Joi  = require('joi'),
-    Writer = require('../../../models/Writer');
+    Writer = require('../../../models/writer');
 
 module.exports = {
   description: 'Delete Writer',

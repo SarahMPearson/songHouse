@@ -19,6 +19,10 @@
       return $http.get('/songs/' + songId);
     }
 
-    return {create:create, query:query, show:show};
+    function nuke(songId){
+      return $http.delete('/songs/' + songId);
+    }
+
+    return {create:create, query:query, show:show, nuke:nuke};
   }]);
 })();

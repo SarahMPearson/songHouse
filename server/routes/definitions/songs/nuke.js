@@ -4,7 +4,7 @@ var Joi  = require('joi'),
   Song = require('../../../models/song');
 
 module.exports = {
-  description: 'Show A Song',
+  description: 'Delete A Song',
   tags:['songs'],
   validate: {
     params: {
@@ -12,10 +12,8 @@ module.exports = {
     }
   },
   handler: function(request, reply){
-    Song.show(request.auth.credentials, request.params.songId, function(err, song){
-      //console.log('routes err', err);
-      //console.log('routes/song', song);
-      reply(song).code(err ? 400 : 200);
+    Song.nuke(request.auth.credentials, request.params.songId, function(err, songId){
+      reply({songId:songId}).code(err ? 400 : 200);
     });
   }
 };

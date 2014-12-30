@@ -8,5 +8,12 @@
       $scope.song = response.data;
     });
 
+    $scope.nuke = function(song){
+      console.log('client/song_detail song', song);
+      Song.nuke(song).then(function(response){
+        $state.go('songs.query');
+      });
+    };
+
   }]);
 })();

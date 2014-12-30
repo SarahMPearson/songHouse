@@ -4,7 +4,7 @@
     table#songsList
       thead
         tr
-          th Delete
+          //th Delete
           th Title
           th Date of Creation
           th Writer(s) Name
@@ -12,7 +12,7 @@
           th PRO
       tbody
         tr(ng-repeat='song in songs')
-          td
+          //td
             a(ng-click='nuke(song)')
               img(ng-src='/assets/delete.png')
           td: a(ui-sref='songs.detail({songId:song.songID[0]})') {{song.title}}

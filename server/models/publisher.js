@@ -36,8 +36,8 @@ Publisher.nuke = function(user, publisherId, cb){
 Publisher.show = function(user, publisherId, cb){
   //console.log(user.id);
   pg.query('select * from publishers where id = $1 and user_id = $2;', [publisherId, user.id], function(err, results){
-    console.log('server model err', err);
-    console.log('server/model:', results);
+    //console.log('server model err', err);
+    //console.log('server/model:', results);
     cb(err, results && results.rows ? results.rows[0] : null);
   });
 };
