@@ -4,6 +4,7 @@
   angular.module('song')
   .controller('SongsQueryCtrl', ['$scope', '$state', 'Song', function($scope, $state, Song){
     $scope.songs = [];
+    $scope.moment = moment;
 
     // function query(){
     //   Song.query().then(function(response){

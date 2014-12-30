@@ -1,7 +1,7 @@
 .row
   .small-12.columns
     h3 Query of The Songs
-    table#publishers
+    table#songsList
       thead
         tr
           th Delete
@@ -16,7 +16,13 @@
             a(ng-click='nuke(song)')
               img(ng-src='/assets/delete.png')
           td: a(ui-sref='p.detail({publisherId:publisher.publisher_id})') {{song.title}}
-          td {{song.doc}}
-          td {{song.writersName}}
-          td {{song.percentages.percents}}
-          td {{song.PRO}}
+          td {{song.doc[0] | date : 'mediumDate'}}
+          td
+            span.writersNames(ng-repeat='writer in song.writerName') 
+              {{writer}}
+          td 
+            span.writersPercentages(ng-repeat='percent in song.percents')
+              {{percent}}
+          td 
+            span.writersPRO(ng-repeat='p in song.PRO')
+              {{p}}
