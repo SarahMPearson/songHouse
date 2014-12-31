@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200);
 
 body {
   background-image: url('/assets/pen4.png');
@@ -13,7 +15,7 @@ body {
   font-size: 120%;
 }
 
-/********************* LOGO **********************/
+/************************************** LOGO & NAV BAR  **************************************/
 #logo {
   padding-top: 2%;
   width: 25%;
@@ -64,13 +66,14 @@ textarea{
 .homeList a:hover {
     color: gray;
 }
-
+/************************************ SIDE NAVIGATION **********************************************/
 ul.side-nav.right a{
   color: black;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 185%;
+  background-color: rgba(255,255,255, .9);
 }
-
+/************************************ ADD / QUERY WRITERS PAGE ********************************/
 #writers{
   width: 100%;
 
@@ -105,7 +108,7 @@ ul.side-nav.right a{
   box-shadow: 10px 10px 29px -3px rgba(0,0,0,0.75);
 }
 
-
+///***************************** ADD / QUERY PUBLISHERS PAGE ********************************//////////////////////
 #publishers{
   width: 100%;
 
@@ -139,39 +142,96 @@ tr td > a {
   font-size: 120%;
   font-color: black;
 }
-
+ ///***************************** SONGS LIST QUERY PAGE **************************************************/
 #songsList{
   width: 100%;
+  -webkit-box-shadow: 10px 10px 30px 9px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 30px 9px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 30px 9px rgba(0,0,0,0.75);
 
   thead tr{
-    /* delete */
-    th:nth-child(1){
-      width: 5%;
+    th{
+      text-align: center;
+      text-transform: uppercase;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 150%;
+      text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
     }
     /* title */
-    th:nth-child(2){
-      width: 20%;
+    th:nth-child(1){
+      width: 25%;
     }
     /* DOC */
-    th:nth-child(3){
+    th:nth-child(2){
       width: 15%;
     }
     /* Writers */
-    th:nth-child(4){
+    th:nth-child(3){
       width: 35%;
     }
-    /* Percents */
-    th:nth-child(5){
+    /* % */
+    th:nth-child(4){
       width: 15%;
     }
     /* PRO */
-    th:nth-child(6){
+    th:nth-child(5){
       width: 10%;
     }
   }
 
-  img{
-    width: 20px;
-    height: 20px;
-  }
+  tbody tr
+    td {
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+      font-size: 110%;
+    }
+    /* title */
+    td:nth-child(1){
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+      font-size: 130%;
+    }
+    /* DOC */
+    td:nth-child(2){
+      text-align: center;
+    }
+    /* WRITERS */
+    td:nth-child(3){
+      text-align: center;
+    }
+    /* % */
+    td:nth-child(4){
+      text-align: center;
+    }
+    /* pro */
+    td:nth-child(5){
+      text-align: center;
+    }
+}
+
+#companyNAME {
+  text-align: center;
+  font-size: 200%;
+  font-family: 'Oswald', sans-serif;
+}
+/******************************* SONGS DETAIL PAGE *****************************************/
+
+.panel {
+  //background-color: rgba(199,182,255,.4);
+  background-color: rgba(0,0,0,.2);
+  border-width: 3px;
+  /*border-color: #d8d8d8; */
+  /* border-color: #19006B; */
+  border-color: black;
+}
+
+#songTitle {
+  font-family: 'Oswald', sans-serif;
+}
+
+.Names {
+  background-color: rgba(255,255,255,.9);
+  border-width: none;
+}
+
+.songDetail {
+  font-family: 'Source Sans Pro', sans-serif;
 }

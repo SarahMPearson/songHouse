@@ -1,10 +1,9 @@
 .row
   .small-12.columns
-    h3 Query of The Songs
+    h3#companyNAME {{rootuser.username}} Songs
     table#songsList
       thead
         tr
-          //th Delete
           th Title
           th Date of Creation
           th Writer(s) Name
@@ -12,13 +11,10 @@
           th PRO
       tbody
         tr(ng-repeat='song in songs')
-          //td
-            a(ng-click='nuke(song)')
-              img(ng-src='/assets/delete.png')
-          td: a(ui-sref='songs.detail({songId:song.songID[0]})') {{song.title}}
+          td: a(ui-sref='songs.detail({songId:song.songID[0]})') {{song.title | uppercase}}
           td {{song.doc[0] | date : 'mediumDate'}}
-          td
-            span.writersNames(ng-repeat='writer in song.writerName') 
+          td {{song.writerName.join(', ')}}
+            //span.writersNames(ng-repeat='writer in song.writerName') 
               {{writer}}
           td {{song.percent.join(', ')}}
           td {{ song.pro.join(', ')}}

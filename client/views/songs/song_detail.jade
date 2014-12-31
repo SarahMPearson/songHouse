@@ -1,8 +1,8 @@
-.row
+.row.panel(ng-show='song.title')
   .small-8.columns
-    h1 {{song.title}}
-    h4 DOC
-    | {{song.doc[0] | date : 'mediumDate'}}
+    h1#songTitle {{song.title}}
+    h4.songDetail D.O.C
+    h5 {{song.doc[0] | date : 'mediumDate'}}
   .small-4.columns
     ul.side-nav.right
       li
@@ -18,16 +18,16 @@
       li
         a(ng-click='nuke(song.songID)') Delete Song
             
-.row
-  .small-6.columns
-    h4 Writer(s)
-    h6.subheader {{song.writerName.join(', ')}}
-    h4 Publisher(s)
-    h6.subheader {{song.pubName.join(', ')}}
-  .small-6.columns
-    h4 Percentages
-    h6.subheader {{song.percent.join(', ')}}
-    h4 PRO
-    h6.subheader {{song.pro.join(', ')}}
-
+  .row.Names
+    .small-6.columns
+      h4.songDetail Writer(s):
+      h5 {{song.writerName.join(', ')}}
+      h4.songDetail Publisher(s):
+      h5 {{song.pubName.join(', ')}}
+    .small-6.columns
+      h4.songDetail Percentages:
+      h5 {{song.percent.join(', ')}}
+      h4.songDetail PRO
+      h5 {{song.pro.join(', ')}}
+      
 include song_modal
