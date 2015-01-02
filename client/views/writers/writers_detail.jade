@@ -1,8 +1,14 @@
 .row.panel
-  .small-9.columns
+  .small-8.small-offset-1.columns
     //img#card(ng-src='/assets/rolCard.png')
-    h1 {{writer.name}}
-    h6.subheader Last Updated: {{writer.updated_at | date: mediumDate}}
+    h1#writerName {{writer.name}}
+    h6.subheader.songDetail Last Updated: {{writer.updated_at | date: mediumDate}}
+    h1.songDetail
+    h6.subheader {{writer.p}}
+    h4.songDetail Phone:
+    h6.subheader {{writer.phone}}
+    h4.songDetail PRO:
+    h6.subheader {{writer.pro | uppercase}}
   .small-3.columns
     ul.side-nav.right
       li
@@ -18,10 +24,10 @@
       li
         a(ng-click='nuke(writer.id)') Delete Writer
 
-  .row
-    .small-6.columns
-      h4 Phone
-      h6.subheader {{writer.phone}}
-    .small-6.columns
-      h4 PRO
-      h6.subheader {{writer.pro}}
+  //- .row
+  //-   .small-5.small-offset-1.columns
+  //-     h4.songDetail Phone:
+  //-     h6.subheader {{writer.phone}}
+  //-   .small-6.columns
+  //-     h4.songDetail PRO:
+  //-     h6.subheader {{writer.pro | uppercase}}

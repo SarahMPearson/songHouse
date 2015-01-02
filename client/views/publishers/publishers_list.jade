@@ -23,17 +23,13 @@
     table#publishers
       thead
         tr
-          th Delete
           th Name
           th Address
           th Phone
       tbody
         tr(ng-repeat='publisher in publishers')
-          td
-            a(ng-click='nuke(publisher)')
-              img(ng-src='/assets/delete.png')
           td: a(ui-sref='publishers.detail({publisherId:publisher.publisher_id})') {{publisher.name}}
-          td {{publisher.address}}
+          td {{publisher.address | uppercase}}
           td {{publisher.phone}}         
     .pagination-centered
       ul.pagination

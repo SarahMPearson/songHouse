@@ -22,8 +22,8 @@
       return $http.get('/publishers/count');
     }
 
-    function nuke(publisher){
-      return $http.delete('/publishers/' + publisher.publisher_id);
+    function nuke(publisherId){
+      return $http.delete('/publishers/' + publisherId);
     }
 
     function show(publisherId){

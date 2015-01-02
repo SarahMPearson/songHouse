@@ -1,8 +1,12 @@
 .row.panel
-  .small-8.columns
+  .small-8.small-offset-1.columns
     h1#publisherName {{publisher.name}}
-    h6.subheader Last Updated: {{publisher.updated_at | date: mediumDate}}
-  .small-4.columns
+    h6.subheader.songDetail Last Updated: {{publisher.updated_at | date: mediumDate}}
+    h4.songDetail Address:
+    h6 {{publisher.address}}
+    h4.songDetail Phone:
+    h6 {{publisher.phone}}
+  .small-3.columns
     ul.side-nav.right
       li
         a(href='', ng-click='showModal(\'#myModal\')') Edit Publisher
@@ -16,11 +20,4 @@
           |   
           a.close-reveal-modal &times;    
       li
-        a(href='#') Delete Publisher
-  .row
-    .small-6.columns
-      h4 Address:
-      h6 {{publisher.address}}
-    .small-6.columns
-      h4 Phone:
-      h6 {{publisher.phone}}
+        a(ng-click='nuke(publisher.id)') Delete Publisher

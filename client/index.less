@@ -78,28 +78,41 @@ ul.side-nav.right a{
   width: 100%;
 
   thead tr{
+    /*writer name*/
     th:nth-child(1){
-      width: 8%;
+      width: 30%;
+      text-align: center;
     }
+    /* Publishing Name */
     th:nth-child(2){
       width: 30%;
+      text-align: center;
     }
+    /* Phone */
     th:nth-child(3){
       width: 40%;
+      text-align: center;
     }
+    /* PRO */
     th:nth-child(4){
       width: 30%;
-    }
-    th:nth-child(5){
-      width:5%;
+      text-align: center;
     }
   }
 
-  img{
-    width: 20px;
-    height: 20px;
+  tbody tr{
+    td{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 110%;
+    }
+    td:nth-child(3){
+      text-align: center;
+    }
   }
+}
 
+#writerName{
+  font-family: 'Oswald', sans-serif;
 }
 
 .writers {
@@ -116,49 +129,47 @@ button.expand.info{
   -moz-box-shadow: 10px 10px 19px -8px rgba(0,0,0,0.63);
   box-shadow: 10px 10px 19px -8px rgba(0,0,0,0.63);
 }
-/********************************* WRITER DETAIL Page ******************************************/
 
-#card{
-  position: relative;
-  width: 100%;
-}
 
-/*h1 {
-  position: absolute;
-  top: 200px;
-  left: 0;
-  width: 100%;
-} */
+
 ///***************************** ADD / QUERY PUBLISHERS PAGE ********************************//////////////////////
 #publishers{
   width: 100%;
 
   thead tr{
+    /*publisher name*/
     th:nth-child(1){
-      width: 5%;
+      width: 35%;
+      text-align: center;
     }
+    /* address */
     th:nth-child(2){
       width: 40%;
+      text-align: center;
     }
+    /* Phone */
     th:nth-child(3){
-      width: 40%;
-    }
-    th:nth-child(4){
-      width: 15%;
+      width: 25%;
+      text-align: center;
     }
   }
 
-  img{
-    width: 20px;
-    height: 20px;
+  tbody tr{
+    td{
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 110%;
+    }
+    td:nth-child(3){
+      text-align: center;
+    }
   }
 }
-
+/********************* this works for both lists on the writers and publishers page  *********************/
 tr td > a {
   color: black;
   text-decoration: none;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 120%;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 130%;
 }
 
 .labels {
@@ -188,6 +199,15 @@ select{
 
 button.small {
   font-size: 1.05rem;
+}
+button.success {
+  font-size: 120%;
+  border-width: 1px;
+  border-color: #42A868;
+  -webkit-box-shadow: 10px 10px 19px -8px rgba(0,0,0,0.63);
+  -moz-box-shadow: 10px 10px 19px -8px rgba(0,0,0,0.63);
+  box-shadow: 10px 10px 19px -8px rgba(0,0,0,0.63);
+
 }
  ///***************************** SONGS LIST QUERY PAGE **************************************************/
 #songsList{
@@ -229,13 +249,8 @@ button.small {
 
   tbody tr
     td {
-      font-family: 'Yanone Kaffeesatz', sans-serif;
+      font-family: 'Roboto Condensed', sans-serif;
       font-size: 110%;
-    }
-    /* title */
-    td:nth-child(1){
-      font-family: 'Yanone Kaffeesatz', sans-serif;
-      font-size: 130%;
     }
     /* DOC */
     td:nth-child(2){
@@ -264,11 +279,8 @@ button.small {
 /******************************* SONGS DETAIL PAGE *****************************************/
 
 .panel {
-  //background-color: rgba(199,182,255,.4);
   background-color: rgba(255,255,255,.6);
   border-width: 2px;
-  /*border-color: #d8d8d8; */
-  /* border-color: #19006B; */
   border-color: rgba(0,0,0,.3);
 }
 

@@ -6,6 +6,7 @@
     $scope.pages = 0;
     $scope._ = _;
 
+
     function query(){
       Publisher.query($state.params.page * 1 || 0).then(function(response){
         $scope.publishers = response.data.publishers;
