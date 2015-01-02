@@ -1,15 +1,22 @@
-//img(ng-src='/assets/rolCard.png')
 .row.panel
   .small-9.columns
     //img#card(ng-src='/assets/rolCard.png')
     h1 {{writer.name}}
+    h6.subheader Last Updated: {{writer.updated_at | date: mediumDate}}
   .small-3.columns
     ul.side-nav.right
       li
-        a(href='#') Edit Writer
-        |   
+        a(href='', ng-click='showModal(\'#myModal\')') Edit Writer
+        #myModal.reveal-modal(data-reveal='')
+          h2 COMING SOON!
+          |   
+          p.lead This feature is still in the works but will be rolled out soon!
+          |   
+          p Thank you for your understanding!
+          |   
+          a.close-reveal-modal &times;   
       li
-        a(href='#') Delete Writer
+        a(ng-click='nuke(writer.id)') Delete Writer
 
   .row
     .small-6.columns

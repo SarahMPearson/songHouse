@@ -28,11 +28,6 @@
       $scope.pages = Math.ceil($scope.total / 5);
     });
 
-    $scope.nuke = function(writer){
-      Writer.nuke(writer).then(function(response){
-        $state.reload();
-      });
-    };
 
     $scope.isCurrent = function(page){
       return page === $state.params.page * 1;

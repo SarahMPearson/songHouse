@@ -42,8 +42,8 @@ Song.show = function(user, songId, cb){
 
 Song.nuke = function(user, songId, cb){
   pg.query('select * from nuke_song($1, $2);', [user.id, songId], function(err, results){
-    console.log('server/models/song nuke ERR', err);
-    console.log('server/moderls/song nuke RESULTS', results);
+    //console.log('server/models/song nuke ERR', err);
+    //console.log('server/moderls/song nuke RESULTS', results);
     cb(err, results && results.rows ? results.rows[0] : null);
   });
 };

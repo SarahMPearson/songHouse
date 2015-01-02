@@ -18,8 +18,8 @@
       return $http.get('/writers/count');
     }
 
-    function nuke(writer){
-      return $http.delete('/writers/' + writer.writer_id);
+    function nuke(writerId){
+      return $http.delete('/writers/' + writerId);
     }
 
     function show(writerId){

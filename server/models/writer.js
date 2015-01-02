@@ -40,6 +40,7 @@ Writer.show = function(user, writerId, cb){
 };
 
 Writer.nuke = function(user, writerId, cb){
+  //console.log('server/model/writer nuke writerId', writerId);
   pg.query('delete from writers where id = $1 and user_id = $2 ;', [writerId, user.id], function(err, results){
     cb(err, results && results.rows ? results.rows[0] : null);
   });

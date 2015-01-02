@@ -1,18 +1,26 @@
-.row
+.row.panel
   .small-8.columns
-    h1 {{publisher.name}}
-    h6.subheader {{publisher.updated_at}}
+    h1#publisherName {{publisher.name}}
+    h6.subheader Last Updated: {{publisher.updated_at | date: mediumDate}}
   .small-4.columns
     ul.side-nav.right
       li
-        a(href='#') Edit Publisher
-        |   
+        a(href='', ng-click='showModal(\'#myModal\')') Edit Publisher
+        //data-reveal-id='myModal') Edit Song
+        #myModal.reveal-modal(data-reveal='')
+          h2 COMING SOON!
+          |   
+          p.lead This feature is still in the works but will be rolled out soon!
+          |   
+          p Thank you for your understanding!
+          |   
+          a.close-reveal-modal &times;    
       li
         a(href='#') Delete Publisher
-.row
-  .small-6.columns
-    h4 Address
-    h6.subheader {{publisher.address}}
-  .small-6.columns
-    h4 Phone
-    h6.subheader {{publisher.phone}}
+  .row
+    .small-6.columns
+      h4 Address:
+      h6 {{publisher.address}}
+    .small-6.columns
+      h4 Phone:
+      h6 {{publisher.phone}}

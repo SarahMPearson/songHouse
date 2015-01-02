@@ -8,5 +8,9 @@
       $scope.publisher = response.data;
     });
 
+    $scope.showModal = function(modalId){
+      $(modalId).foundation('reveal', 'open');
+    };
+
   }]);
 })();

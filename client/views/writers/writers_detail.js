@@ -8,5 +8,16 @@
       $scope.writer = response.data;
     });
 
+    $scope.nuke = function(writer){
+      console.log('client/writers_detail writer', writer);
+      Writer.nuke(writer).then(function(response){
+        $state.go('writers.list');
+      });
+    };
+
+    $scope.showModal = function(modalId){
+      $(modalId).foundation('reveal', 'open');
+    };
+
   }]);
 })();

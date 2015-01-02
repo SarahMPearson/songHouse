@@ -15,5 +15,9 @@
       });
     };
 
+    $scope.showModal = function(modalId){
+      $(modalId).foundation('reveal', 'open');
+    };
+
   }]);
 })();
