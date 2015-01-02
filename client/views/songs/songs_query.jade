@@ -11,7 +11,7 @@
           th PRO
       tbody
         tr(ng-repeat='song in songs')
-          td: a(ui-sref='songs.detail({songId:song.songID[0]})') {{song.title | uppercase}}
+          td: a(ui-sref='songs.detail({songId:song.songID})') {{song.title | uppercase}}
           td {{song.doc[0] | date : 'mediumDate'}}
           td {{song.writerName.join(', ')}}
             //span.writersNames(ng-repeat='writer in song.writerName') 
