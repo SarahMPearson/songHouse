@@ -14,6 +14,10 @@
       return $http.get('/writers?limit=5&offset=' + 5 * page);
     }
 
+    function findOne(writerId){
+      return $http.get('/writers/' + writerId);
+    }
+
     function count(){
       return $http.get('/writers/count');
     }
@@ -30,6 +34,6 @@
       return $http.get('/writers?limit=1000');
     }
 
-    return {create:create, query:query, count:count, nuke:nuke, show:show, all:all};
+    return {create:create, query:query, findOne:findOne, count:count, nuke:nuke, show:show, all:all};
   }]);
 })();

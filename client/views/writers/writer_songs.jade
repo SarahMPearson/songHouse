@@ -13,7 +13,6 @@
         tr(ng-repeat='song in songs')
           td: a(ui-sref='songs.detail({songId:song.songID})') {{song.title | uppercase}}
           td {{song.doc[0] | date : 'mediumDate'}}
-          td: a(ui-sref='writers.one({writerId:song.writerID)') {{song.writerName.join(', ') | uppercase}}
-          //td {{song.writerName.join(', ') | uppercase}}
+          td {{song.writerName.join(', ') | uppercase}}
           td {{song.percent.join(', ')}}
           td {{song.pro.join(', ')}}

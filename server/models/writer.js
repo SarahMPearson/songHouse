@@ -22,6 +22,14 @@ Writer.query = function(user, query, cb){
   });
 };
 
+Writer.findOne = function(user, writerId, cb){
+  pg.query('select * from query_by_writersname($1, $2)', [user.id, writerId], function(err, results){
+    console.log('server/model/writer writer.js err in findOne', err);
+    console.log('server/model/writer writer.JS RESUTLS in findOne>>>>>>>>>', results);
+    cb(err, results && results.rows ? results.rows : null);
+  });
+};
+
 Writer.count = function(user, cb){
   pg.query('select count(*) from writers where user_id = $1', [user.id], function(err, results){
     //console.log('SERVER WRITER.JS ERR', err);
