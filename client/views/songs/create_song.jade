@@ -26,11 +26,11 @@ form
       button.small.radius.info(ng-click='addWriter()') Add Writer
   .row
     .small-12.columns
-      table
+      table#addWriters
         tr(ng-repeat='w in song.writers')
-          td(width='250') {{w.name}}
-          td(width='300') {{w.pubName}}
-          td(width='50') {{w.percentage}}
+          td {{w.name}}
+          td {{w.pubName}}
+          td {{w.percentage}}
           td {{w.pro}}
   .row
     .small-12.columns

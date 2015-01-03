@@ -6,6 +6,7 @@
 body {
   background-image: url('/assets/pen5.png');
   background-size: cover;
+  margin-bottom: 7%;
 }
 
 #description {
@@ -33,11 +34,14 @@ body {
 #homeLogo{
   width: 60%;
   margin-left: 19%;
+  margin-top: 5%;
 }
 
 .top-bar.ng-scope{
-  background-color: white;
+  //background-color: white;
+  background-color: rgba(0,0,0,.1);
   height: 55px;
+  margin-bottom: 1%;
 }
 
 .top-bar-section ul li > a {
@@ -48,7 +52,7 @@ body {
 }
 
 .top-bar-section li:not(.has-form) a:not(.button){
-  background-color: white;
+  background-color: #E5E5E5;
 }
 .top-bar-section li:not(.has-form) a:not(.button):hover {
   background-color: gray;
@@ -182,6 +186,32 @@ tr td > a {
 }
 
 /*********************************************** CREATE SONG PAGE *****************************************/
+
+#addWriters{
+  width: 100%;
+
+  table tr{
+    td {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 110%;
+    }
+    /* writer name */
+    td:nth-child(1){
+      width: 30%;
+    }
+    /* publisher name */
+    th:nth-child(2){
+      width: 30%;
+    }
+    /* % */
+    td:nth-child(3){
+      width: 20%
+    }
+    td:nth-child(4){
+      width: 20%;
+    }
+  }
+}
 
 input[type='text'], input[type='date'] {
   font-size: 1.875rem;
