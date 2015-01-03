@@ -1,18 +1,18 @@
 'use strict';
 
 var Joi  = require('joi'),
-    Writer = require('../../../models/writer');
+  Writer = require('../../../models/writer');
 
 module.exports = {
-  description: 'Show A Writers INFORMATION',
+  description: 'Find One Writer',
   tags:['writers'],
   validate: {
     params: {
-      writerId: Joi.number().required()
+      writerId: Joi.string().required()
     }
   },
   handler: function(request, reply){
-    Writer.show(request.auth.credentials, request.params.writerId, function(err, writer){
+    Writer.findOne(request.auth.credentials, request.params.writerId, function(err, writer){
       // console.log('routes err', err);
       // console.log('routes writer', writer);
       reply(writer).code(err ? 400 : 200);

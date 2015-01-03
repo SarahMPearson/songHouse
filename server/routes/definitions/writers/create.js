@@ -16,7 +16,7 @@ module.exports = {
   },
   handler: function(request, reply){
     Writer.create(request.auth.credentials, request.payload, function(err, writerId){
-      console.log('SERVER DEF WRITERS CREATE.JS writerId', writerId);
+      //console.log('SERVER DEF WRITERS CREATE.JS writerId', writerId);
       reply({writerId:writerId}).code(err ? 400 : 200);
     });
   }

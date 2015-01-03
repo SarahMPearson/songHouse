@@ -15,7 +15,7 @@
     }
 
     function findOne(writerId){
-      return $http.get('/writers/' + writerId);
+      return $http.get('/writers/' + writerId + '/songs');
     }
 
     function count(){

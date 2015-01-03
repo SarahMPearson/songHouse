@@ -23,9 +23,9 @@ Writer.query = function(user, query, cb){
 };
 
 Writer.findOne = function(user, writerId, cb){
-  pg.query('select * from query_by_writersname($1, $2)', [user.id, writerId], function(err, results){
-    console.log('server/model/writer writer.js err in findOne', err);
-    console.log('server/model/writer writer.JS RESUTLS in findOne>>>>>>>>>', results);
+  pg.query('select * from query_by_writersId($1, $2)', [user.id, writerId], function(err, results){
+    //console.log('server/model/writer writer.js err in findOne', err);
+    //console.log('server/model/writer writer.JS RESUTLS in findOne>>>>>>>>>', results);
     cb(err, results && results.rows ? results.rows : null);
   });
 };
