@@ -17,7 +17,7 @@
 
     Publisher.count().then(function(response){
       $scope.total = response.data.count * 1;
-      $scope.pages = Math.ceil($scope.total / 5);
+      $scope.pages = Math.ceil($scope.total / 25);
     });
 
     $scope.nuke = function(publisher){

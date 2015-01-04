@@ -15,7 +15,7 @@
     }
 
     function query(page){
-      return $http.get('/publishers?limit=5&offset=' + 5 * page);
+      return $http.get('/publishers?limit=25&offset=' + 25 * page);
     }
 
     function count(){

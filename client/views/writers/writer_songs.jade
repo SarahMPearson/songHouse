@@ -16,6 +16,5 @@
           td {{song.doc[0] | date : 'mediumDate'}}
           td
             a(ng-repeat='id in song.writerID', ui-sref='writers.one({writerId:id})') {{song.writerName[$index] | uppercase}}{{$last ? '' : ', '}}
-          //td {{song.writerName.join(', ') | uppercase}}
           td {{song.percent.join(', ')}}
           td {{song.pro.join(', ')}}

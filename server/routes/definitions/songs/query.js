@@ -14,8 +14,8 @@ module.exports = {
   // },
   handler: function(request, reply){
     Song.query(request.auth.credentials, function(err, songs){
-      //console.log('server/routes/def/query.js error', err);
-      //console.log('server/routes/def/query.js songs', songs);
+      // console.log('server/routes/def/query.js error', err);
+      // console.log('server/routes/def/query.js songs', songs);
       reply({songs:songs}).code(err ? 400 : 200);
     });
   }
