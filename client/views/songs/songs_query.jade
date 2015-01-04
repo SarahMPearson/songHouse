@@ -1,7 +1,13 @@
 .row
   .small-12.columns
     h3#companyNAME {{rootuser.username}} Songs
-    input#search(type='text', ng-model='search', placeholder='search by song title')
+.row
+  .small-1.columns
+    h6 Search:
+  .small-11.columns
+    input#searchInput(type='text', ng-model='search', placeholder='search by song title')
+.row
+  .small-12.columns
     table#songsList
       thead
         tr
