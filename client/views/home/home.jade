@@ -3,9 +3,10 @@ a(ui-sref='home')
 
 
 p#description SongHouse is a home for publishing companies songs.  In one handy program you can enter songs, add writers and additional publishers. 
-  | You can query the songs by writer, DOC (date of creation) and title.  With future releases you will be able to upload mp3 files for each song to
-  | have quick and easy access of all your songs.  SongHouse is exactly what it says a house for all your publishing needs.  So come on in - kick back
+  | You can query the songs by writers and title.  With future releases you will be able to upload mp3 files for each song to
+  | have quick and easy access to hearing all your songs.  SongHouse is exactly what it says a house for all your publishing needs.  So come on in - kick back
   | relax and start your companies database.
+p#description Start by adding a publishers. Then move on to writers and then the all important songs. So get started now!
 
  
 .row.homeList
@@ -17,9 +18,3 @@ p#description SongHouse is a home for publishing companies songs.  In one handy 
     a(ui-sref='writers.list') Add A Writer
   .small-3.columns
     a(ui-sref='publishers.list') Add A Publisher
- 
- //- //ul#homeList(ng-show='rootuser.username')
- //-   li: a(ui-sref='home') Home
- //-   li: a(ui-sref='songs.create') Add Song
- //-   li: a(ui-sref='writers.list') Writers
- //-   li: a(ui-sref='publishers.list') Publishers

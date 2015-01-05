@@ -1,6 +1,5 @@
 .row.panel
   .small-8.small-offset-1.columns
-    //img#card(ng-src='/assets/rolCard.png')
     h1#writerName {{writer.name}}
     h6.subheader.songDetail Last Updated: {{writer.updated_at | date: mediumDate}}
     h1.songDetail
@@ -23,11 +22,3 @@
           a.close-reveal-modal &times;   
       li
         a(ng-click='nuke(writer.id)') Delete Writer
-
-  //- .row
-  //-   .small-5.small-offset-1.columns
-  //-     h4.songDetail Phone:
-  //-     h6.subheader {{writer.phone}}
-  //-   .small-6.columns
-  //-     h4.songDetail PRO:
-  //-     h6.subheader {{writer.pro | uppercase}}

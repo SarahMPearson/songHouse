@@ -11,7 +11,7 @@
     }
 
     function query(page){
-      return $http.get('/writers?limit=5&offset=' + 5 * page);
+      return $http.get('/writers?limit=25&offset=' + 25 * page);
     }
 
     function findOne(writerId){
