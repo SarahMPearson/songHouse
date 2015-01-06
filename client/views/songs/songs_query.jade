@@ -12,10 +12,11 @@
       thead
         tr
           th Title
-          th Date of Creation
+          th D.O.C.
+          //th Date of Creation
           th Writer(s) Name
           th Percents
-          th PRO
+          th P.R.O.
       tbody
         tr(ng-repeat='song in songs | filter: search')
           td: a(ui-sref='songs.detail({songId:song.songID})') {{song.title | uppercase}}
