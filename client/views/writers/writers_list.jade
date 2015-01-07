@@ -8,7 +8,7 @@
       label.labels Writer Name
       input(type='text', ng-model='person.name', placeholder='name')
     .small-6.columns
-      label.labels Select Writer's Publishing Company
+      label.labels Writer's Publisher
       select(name='pubId', ng-model='person.pub', ng-options='p.publisher_id as p.name for p in publishers | orderBy:"name"', required)
        option(value='') Select Publisher
   .row
