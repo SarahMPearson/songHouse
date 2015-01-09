@@ -2,9 +2,10 @@
 =========
 
 ### Screenshots
-![Image1](https://raw.githubusercontent.com/SarahMPearson/capstone/master/docs/screenshots/Home-L.jpg)
-![Image2](https://raw.githubusercontent.com/SarahMPearson/capstone/master/docs/screenshots/Show-L.jpg)
-![Image3](https://raw.githubusercontent.com/SarahMpearson/capstone/master/docs/screenshots/Dashboard-L.jpg)
+![Image1](https://raw.githubusercontent.com/SarahMPearson/songHouse/master/docs/screenshots/Home-L.png)
+![Image2](https://raw.githubusercontent.com/SarahMPearson/songHouse/master/docs/screenshots/publisher-L.png)
+![Image3](https://raw.githubusercontent.com/SarahMpearson/songHouse/master/docs/screenshots/writers-l.png)
+![Image4](https://raw.githubusercontent.com/SarahMpearson/songHouse/master/docs/screenshots/songs-l.png)
 ### Description
 A database for song publishing companies where they can enter a new song with all title, DOC (date of creation), writer(s), writer publishing information and other information on the song.
 
@@ -59,4 +60,3 @@ $ npm test
 
 ### License
 [MIT](LICENSE)
-
