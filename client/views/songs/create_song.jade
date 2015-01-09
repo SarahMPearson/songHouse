@@ -3,27 +3,48 @@ form.panel
     .small-12.columns
       h2.add Create A Song
       h6.sub Make sure the writer is already in the system before entering the song
-  .row
+  .row.homeList.show-for-medium-up
     .small-9.columns
       label.labels Title
       input(type='text', ng-model='song.title', placeholder='title of song')
     .small-3.columns
       label.labels Date of Creation
       input(type='date', ng-model='song.doc')
-  .row
+        
+  .row.homeListSMALL.show-for-small-only
+    .small-12.columns
+      label.labels Title
+      input(type='text', ng-model='song.title', placeholder='title of song')
+  .row.homeListSMALL.show-for-small-only
+    .small-12.columns
+      label.labels D.O.C
+      input(type='date', ng-model='song.doc')
+  .row.show-for-medium-up
     .small-6.columns
       label.labels Select Writer(s)
     .small-4.columns
       label.labels Writer's Percent
     .small-2.columns
       label.labels 
-  .row
+  
+  .row.show-for-medium-up
     .small-6.columns
       select(name='writer', ng-model='writer', ng-options='w as w.name for w in writers | orderBy:"name"', required)
         option(value='') Select Writer
     .small-4.columns
       input(type='text', ng-model='percentage', placeholder='percentage')       
     .small-2.columns
+      button.small.radius.info(ng-click='addWriter()') Add Writer
+      
+  .row.show-for-small-only
+    .small-12.columns
+      label.labels Select Writer(s)
+      select(name='writer', ng-model='writer', ng-options='w as w.name for w in writers | orderBy:"name"', required)
+        option(value='') Select Writer
+    .small-12.columns
+      label.labels Writer's Percent
+      input(type='text', ng-model='percentage', placeholder='percentage')       
+    .small-12.columns
       button.small.radius.info(ng-click='addWriter()') Add Writer
   .row
     .small-12.columns
