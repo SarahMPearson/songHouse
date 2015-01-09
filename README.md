@@ -2,10 +2,11 @@
 =========
 
 ### Screenshots
-![Image1](https://raw.githubusercontent.com/SarahMPearson/songHouse/docs/screenshots/Home-L.jpg)
-![Image2](https://raw.githubusercontent.com/SarahMPearson/songHouse/docs/screenshots/publisher-L.jpg)
-![Image3](https://raw.githubusercontent.com/SarahMpearson/songHouse/docs/screenshots/writers-l.jpg)
-![Image4](https://raw.githubusercontent.com/SarahMpearson/songHouse/docs/screenshots/songs-l.jpg)
+![Image1](https://raw.githubusercontent.com/SarahMPearson/songHouse/master/doc/screenshots/Home-L.jpg)
+![Image2](https://raw.githubusercontent.com/SarahMPearson/songHouse/master/doc/screenshots/publisher-L.jpg)
+![Image3](https://raw.githubusercontent.com/SarahMPearson/songHouse/master/doc/screenshots/writers-l.jpg)
+![Image4](https://raw.githubusercontent.com/SarahMPearson/songHouse/master/doc/screenshots/songs-l.jpg)
+
 ### Description
 A database for song publishing companies where they can enter a new song with all title, DOC (date of creation), writer(s), writer publishing information and other information on the song.
 
