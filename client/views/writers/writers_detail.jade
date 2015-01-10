@@ -1,4 +1,4 @@
-.row.panel
+.row.panel.show-for-medium-up
   .small-8.small-offset-1.columns
     h1#writerName {{writer.name}}
     h6.subheader.songDetail Last Updated: {{writer.updated_at | date: mediumDate}}
@@ -22,3 +22,29 @@
           a.close-reveal-modal &times;   
       li
         a(ng-click='nuke(writer.id)') Delete Writer
+
+.row.panel.show-for-small-only
+  .small-12.columns
+    h1#writerName {{writer.name}}
+    h6.subheader.songDetail Last Updated: {{writer.updated_at | date: mediumDate}}
+    h1.songDetail
+      h6.subheader {{writer.p}}
+      h4.songDetail Phone:
+      h6.subheader {{writer.phone}}
+      h4.songDetail PRO:
+      h6.subheader {{writer.pro | uppercase}}
+  .row
+    .small-12.columns
+      ul.side-nav.right
+        li
+          a(href='', ng-click='showModal(\'#myModal\')') Edit Writer
+          #myModal.reveal-modal(data-reveal='')
+            h2 COMING SOON!
+            |   
+            p.lead This feature is still in the works but will be rolled out soon!
+            |   
+            p Thank you for your understanding!
+            |   
+            a.close-reveal-modal &times;   
+        li
+          a(ng-click='nuke(writer.id)') Delete Writer

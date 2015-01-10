@@ -1,4 +1,4 @@
-.panel.writers
+.panel.writers.show-for-medium-up
   .row
     .small-12.columns
       h2.add Add A Writer
@@ -21,7 +21,33 @@
   .row  
     .small-12.columns
       button.button.expand.info(ng-click='create(person)') Add Writer
-.row.writers
+
+.panel.writers.show-for-small-only
+  .row
+    .small-12.columns
+      h2.add Add A Writer
+      h6.sub Add publisher information before adding writer
+  .row
+    .small-12.columns
+      label.labels Writer Name
+      input(type='text', ng-model='person.name', placeholder='name')
+    .small-12.columns
+      label.labels Writer's Publisher
+      select(name='pubId', ng-model='person.pub', ng-options='p.publisher_id as p.name for p in publishers | orderBy:"name"', required)
+        option(value='') Select Publisher
+  .row
+    .small-12.columns
+      label.labels Writer's Phone #
+      input(type='text', ng-model='person.phone', placeholder='123-456-7890')
+    .small-12.columns
+      label.labels Writer's PRO
+      input(type='text', ng-model='person.pro', placeholder='BMI')
+  .row  
+    .small-12.columns
+      button.button.expand.info(ng-click='create(person)') Add Writer    
+      
+
+.row.writers.show-for-medium-up
   .small-12.columns
     h3.labels Writers List
     table#writers
@@ -37,6 +63,23 @@
           td {{writer.pubName}}
           td {{writer.phone}}
           td {{writer.pro}}         
+    .pagination-centered
+      ul.pagination
+        li(ng-class='{current:isCurrent(page)}', ng-repeat='page in _.range(0,pages)')
+          a(ui-sref='writers.list({page:page})') {{page}}
+
+.row.writers.show-for-small-only
+  .small-12.columns
+    h3.labels Writers List
+    table#writers
+      thead
+        tr
+          th Name
+          th Publishing
+      tbody
+        tr(ng-repeat='writer in writers')
+          td: a(ui-sref='writers.detail({writerId:writer.writer_id})') {{writer.name}}
+          td {{writer.pubName}}       
     .pagination-centered
       ul.pagination
         li(ng-class='{current:isCurrent(page)}', ng-repeat='page in _.range(0,pages)')
