@@ -1,4 +1,4 @@
-.panel.writers
+.panel.writers.show-for-medium-up
   .row
     .small-12.columns
       h2.add Add A Publisher
@@ -17,7 +17,26 @@
     .small-12.columns      
       button.button.expand.info(ng-click='create(pub)') Add Publisher
 
-.row.writers
+.panel.writers.show-for-small-only
+  .row
+    .small-12.columns
+      h2.add Add A Publisher
+  .row
+    .small-12.columns
+      label.labels Publisher Name
+      input(type='text', ng-model='pub.name', placeholder='EMI')
+    .small-12.columns
+      label.labels Publisher Phone #
+      input(type='text', ng-model='pub.phone', placeholder='123-456-7890')
+  .row
+    .small-12.columns
+      label.labels Publisher's Address
+      input(type='text', ng-model='pub.address', placeholder='123 Main St., Nashville, TN, 37212')
+  .row
+    .small-12.columns      
+    button.button.expand.info(ng-click='create(pub)') Add Publisher
+
+.row.writers.show-for-medium-up
   .small-12.columns
     h3.labels Publishers List
     table#publishers
@@ -35,3 +54,20 @@
       ul.pagination
         li(ng-class='{current:isCurrent(page)}', ng-repeat='page in _.range(0,pages)')
           a(ui-sref='publishers.list({page:page})') {{page}}
+
+
+.row.writers.show-for-small-only
+  .small-12.columns
+    h3.labels Publishers List
+    table#publishers
+      thead
+        tr
+          th Name
+      tbody
+        tr(ng-repeat='publisher in publishers')
+          td: a(ui-sref='publishers.detail({publisherId:publisher.publisher_id})') {{publisher.name}}
+        
+      .pagination-centered
+        ul.pagination
+          li(ng-class='{current:isCurrent(page)}', ng-repeat='page in _.range(0,pages)')
+            a(ui-sref='publishers.list({page:page})') {{page}}
