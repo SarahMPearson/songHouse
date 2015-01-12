@@ -9,7 +9,7 @@ p#description SongHouse is a home for publishing companies songs.  In one handy 
 p#description Start by adding a publishers. Then move on to writers and then the all important songs. So get started now!
 
  
-.row.homeList.show-for-medium-up
+.row.homeList.show-for-medium-up(ng-show='rootuser.username')
   .small-3.columns
     a(ui-sref='home') Home
   .small-3.columns
@@ -19,15 +19,15 @@ p#description Start by adding a publishers. Then move on to writers and then the
   .small-3.columns
     a(ui-sref='publishers.list') Add A Publisher
 
-.row.homeListSMALL.show-for-small-only
+.row.homeListSMALL.show-for-small-only(ng-show='rootuser.username')
   .small-12.columns
     a(ui-sref='home') Home
-.row.homeListSMALL.show-for-small-only
+.row.homeListSMALL.show-for-small-only(ng-show='rootuser.username')
   .small-12.columns
     a(ui-sref='songs.create') Add Song
-.row.homeListSMALL.show-for-small-only
+.row.homeListSMALL.show-for-small-only(ng-show='rootuser.username')
   .small-12.columns
     a(ui-sref='writers.list') Add A Writer
-.row.homeListSMALL.show-for-small-only
+.row.homeListSMALL.show-for-small-only(ng-show='rootuser.username')
   .small-12.columns
     a(ui-sref='publishers.list') Add A Publisher
