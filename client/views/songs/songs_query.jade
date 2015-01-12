@@ -6,7 +6,7 @@
     h6 Search:
   .small-11.columns
     input#searchInput(type='text', ng-model='search.title', placeholder='search by song title')
-.row
+.row.show-for-medium-up
   .small-12.columns
     table#songsList
       thead
@@ -25,3 +25,17 @@
             a(ng-repeat='id in song.writerID', ui-sref='writers.one({writerId:id})') {{song.writerName[$index] | uppercase}}{{$last ? '' : ', '}}
           td {{song.percent.join(', ')}}
           td {{song.pro.join(', ')}}
+
+
+.row.show-for-small-only
+  .small-12.columns
+    table#smallsongslist
+      thead
+        tr
+          th Title
+          th Writer(s) Name
+      tbody
+        tr(ng-repeat='song in songs | filter: search')
+          td: a(ui-sref='songs.detail({songId:song.songID})') {{song.title | uppercase}}
+          td
+            a(ng-repeat='id in song.writerID', ui-sref='writers.one({writerId:id})') {{song.writerName[$index] | uppercase}}{{$last ? '' : ', '}}

@@ -41,7 +41,7 @@ body {
 .top-bar.ng-scope{
   //background-color: white;
   background-color: rgba(0,0,0,.1);
-  height: 6%;
+  height: 45px;
   margin-bottom: 1%;
 }
 
@@ -320,6 +320,46 @@ button.success {
       text-align: center;
     }
 }
+
+#smallsongslist{
+  width: 100%;
+
+  thead tr{
+    th{
+      text-align: center;
+      text-transform: uppercase;
+      font-family: 'Oswald', sans-serif;
+      font-size: 120%;
+      text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
+      background-color: #E5E5E5
+    }
+    /* title */
+    th:nth-child(1){
+      width: 50%;
+    }
+    /* WRITERS*/
+    th:nth-child(2){
+      width: 50%;
+    }
+  }
+
+  tbody tr
+  td {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 100%;
+  }
+  /* Title */
+  td:nth-child(1){
+    text-align: center;
+  }
+  /* WRITERS */
+  td:nth-child(2){
+    text-align: center;
+    font-size: 85%;
+  }
+}
+
+
 
 #companyNAME {
   text-align: center;
