@@ -1,6 +1,6 @@
 h1 {{mode | uppercase}}
 
-.row
+.row.show-for-medium-up
   .small-12.columns
     form
       .row
@@ -18,7 +18,26 @@ h1 {{mode | uppercase}}
           label(for='avatar') Company Logo
           input#avatar(type='text', name='avatar', ng-model='user.avatar')
         .small-6.columns
+    .row
+      .small-6.large-centered.columns
+        button(ng-click='submit()') Submit
+      .small-6.columns
+        
+.row.show-for-small-only
+  .small-12.columns
+    form
       .row
-        .small-6.large-centered.columns
+        .small-12.columns
+          label(for='username') Company Name
+          input#username(type='text', name='username', ng-model='user.username', autofocus)
+      .row
+        .small-12.columns
+          label(for='password') Password
+          input#password(type='password', name='password', ng-model='user.password')
+      .row(ng-show='mode === "register"')
+        .small-12.columns
+          label(for='avatar') Company Logo
+          input#avatar(type='text', name='avatar', ng-model='user.avatar')
+      .row
+        .small-12.columns
           button(ng-click='submit()') Submit
-        .small-6.columns
